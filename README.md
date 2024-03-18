@@ -1,6 +1,6 @@
 # Port Service Detection
 
-#### The features of this project is:
+## The features of this project is:
 1) **Open Port Detection** that scans all ports and determines ports that are open using flag values like `0` and `1`.
 2) **Service Detection** that attempt to identify the service running on each open port by sending application-specific probes or analyzing response patterns.
 3) **Multithreading or Asynchronous I/O**, which can significantly improve the speed and efficiency by scanning multiple ports simultaneously, reducing the overall scan time.
