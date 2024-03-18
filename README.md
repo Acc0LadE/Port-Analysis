@@ -1,9 +1,11 @@
 # Port Service Detection
 ******
 #### The features of this project is:
-1) Detects open ports in client machine.
-2) Checks wether the port is being blocked by a service and determines the service that is using the port.
-3) Has Multithreading or Asynchronous I/O, which allows connection of multiple clients to the server.
+1) **Open Port Detection** that scans all ports and determines ports that are open using flag values like `0` and `1`.
+2) **Service Detection** that attempt to identify the service running on each open port by sending application-specific probes or analyzing response patterns.
+3) **Multithreading or Asynchronous I/O**, which can significantly improve the speed and efficiency by scanning multiple ports simultaneously, reducing the overall scan time.
+4) **Vulnerability** scanning capabilities by integrating with vulnerability databases or `.csv` or `.txt` files to warn users of different vulnerabilities of known ports.
+5) **Banner Grabbing** involves capturing and analyzing the response from open ports to gather information about the service, such as version number and server type.
 
 ## Steps to execute:
 
@@ -30,4 +32,19 @@
    This command generates `server.cert` and `server.key` files which are required for SSL (Secure Socket Layers) to create a secure connection between the Server and Client.
 6) Save the `server.cert` file in the directory where the `client.py` file is saved.
 
-7) Now run the server file, after which, run the client file  
+7) Now run the server file, after which, run the client file
+
+## Troubleshooting:
+
+1) `Timeout: Unable to grab banner`
+
+#### This could happen for several reasons:
+* No Service Running: There might be no service running on these ports, so attempting to grab the banner resulted in a timeout because there was no response from the server.
+* Firewall or Network Configuration: The connection might be blocked by a firewall or there could be network configuration issues preventing the server from accessing the services running on these ports.
+* Timeout Settings: The timeout value used for attempting to grab the banner might be too short for these ports, especially if the services running on them take longer to respond.
+
+To troubleshoot this issue, you can try the following:
+* Verify that there are services running on ports 135, 139, and 445.
+* Check the firewall settings to ensure that connections to these ports are allowed.
+* Increase the timeout value used for attempting to grab the banner to give the services more time to respond.
+* Ensure that the server has proper network access to reach the services running on these ports.
