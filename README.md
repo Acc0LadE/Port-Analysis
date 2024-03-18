@@ -1,4 +1,4 @@
-# Port Service Detection
+# Port Analysis
 
 ## The features of this project is:
 1) **Open Port Detection** that scans all ports and determines ports that are open using flag values like `0` and `1`.
