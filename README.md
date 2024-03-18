@@ -36,7 +36,7 @@
 
 ## Troubleshooting:
 
-1) `Timeout: Unable to grab banner`
+1) `open, Banner: Timeout: Unable to grab banner, Service: Unknown`
 
 #### This could happen for several reasons:
 * No Service Running: There might be no service running on these ports, so attempting to grab the banner resulted in a timeout because there was no response from the server.
